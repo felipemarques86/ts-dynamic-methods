@@ -1,13 +1,23 @@
 {
   "name": "Metamorphist",
-  "version": "0.0.1-SNAPSHOT",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A collection of useful annotations for development in typescript.",
   "main": "index.js",
+  "homepage": "https://github.com/felipemarques86/metamorphist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon"
   },
-  "keywords": ["typescript"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipemarques86/metamorphist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felipemarques86/metamorphist/issues"
+  },
+  "keywords": [
+    "typescript"
+  ],
   "author": "Felipe Marques",
   "license": "AGPL",
   "devDependencies": {
@@ -15,5 +25,8 @@
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "readme-md-generator": "^1.0.0"
   }
 }
