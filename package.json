@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipemarques86/ts-dynamic-methods.git"
+    "url": "https://registry.npmjs.org/ts-dynamic-methods"
   },
   "bugs": {
     "url": "https://github.com/felipemarques86/ts-dynamic-methods/issues"
