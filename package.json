@@ -1,19 +1,19 @@
 {
-  "name": "metamorphist",
+  "name": "ts-dynamic-methods",
   "version": "0.0.1",
   "description": "A collection of useful annotations for development in typescript.",
   "main": "index.js",
-  "homepage": "https://github.com/felipemarques86/metamorphist",
+  "homepage": "https://github.com/felipemarques86/ts-dynamic-methods",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felipemarques86/metamorphist.git"
+    "url": "git+https://github.com/felipemarques86/ts-dynamic-methods.git"
   },
   "bugs": {
-    "url": "https://github.com/felipemarques86/metamorphist/issues"
+    "url": "https://github.com/felipemarques86/ts-dynamic-methods/issues"
   },
   "keywords": [
     "typescript"
