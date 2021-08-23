@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      #- run: npm install
-      - run: echo ${{secrets.NPM}}
-      - run: pwd
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM}}
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM}}
