@@ -3,3 +3,4 @@
 /.idea/
 ts-dynamic-methods.iml
 package-lock.json
+.npmrc
