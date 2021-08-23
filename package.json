@@ -1,5 +1,5 @@
 {
-  "name": "Metamorphist",
+  "name": "metamorphist",
   "version": "0.0.1",
   "description": "A collection of useful annotations for development in typescript.",
   "main": "index.js",
