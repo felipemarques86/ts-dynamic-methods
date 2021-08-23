@@ -1,5 +1,5 @@
 
-import {Recast, Shadow, SuccessorOf, SuccededBy, Span, Inject, Lock} from "../src";
+import {Recast, ReplaceMethodsBy, ConditionalReplaceMethodsOn, ConditionalReplaceMethodsBy, Span, Inject, Lock} from "../src";
 import assert from "assert";
 
 console.log("---------- @Recast example ---------");
@@ -19,14 +19,14 @@ class A {
         console.log('A.method2');
     }
 }
-
+// Recast - Class A has the shape of A1
 const objectOfA = new A();
 objectOfA.method1();
 assert(objectOfA.method2() === undefined);
 // ------------------------------------------------------
 
-console.log("---------- @Shadow example ---------");
-@Shadow(() => console.log('This method implementation was replaced'))
+console.log("---------- @ReplaceMethodsBy example ---------");
+@ReplaceMethodsBy(() => console.log('This method implementation was replaced'))
 class B {
     method1(): void {
         console.log('B.method1');
@@ -36,13 +36,13 @@ class B {
         console.log('B.method2');
     }
 }
-
+// Shadow - all methods will be replaced with the anonymous function
 const objectOfB = new B();
 objectOfB.method1();
 objectOfB.method2();
 // ------------------------------------------------------
 
-console.log("---------- @SuccessorOf example ---------");
+console.log("---------- @ReplaceMethodsOn example ---------");
 class C1 {
     method1(): void {
         console.log('C1.method1');
@@ -57,7 +57,7 @@ class C1 {
     }
 }
 
-@SuccessorOf(C1, C1.prototype.method3, true )
+@ConditionalReplaceMethodsOn(C1, C1.prototype.method3, true )
 abstract class C {
     method1(): void {
         console.log('C.method1');
@@ -67,7 +67,7 @@ abstract class C {
         console.log('C.method2');
     }
 }
-
+// ReplaceMethodsOn - All methods in C1 will be replaced by the methods in C if method3 returns true
 const objectC1 = new C1();
 objectC1.method1();
 objectC1.method2();
@@ -75,7 +75,7 @@ objectC1.method2();
 // ------------------------------------------------------
 
 console.log("---------- @SuccededBy example ---------");
-@SuccededBy(C, D.prototype.method4, true)
+@ConditionalReplaceMethodsBy(C, D.prototype.method4, true)
 class D {
     method1(): void {
         console.log('D.method1');
@@ -120,7 +120,7 @@ abstract class E {
         console.log('E.method2');
     }
 }
-
+// Span - replace all methods in E1 and E2 by the methods in E
 const objectOfE1 = new E1();
 objectOfE1.method1();
 const objectOfE2 = new E2();

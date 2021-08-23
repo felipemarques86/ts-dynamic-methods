@@ -19,13 +19,20 @@
 ## Install
 
 ```sh
-npm install
+npm install metamorphist
 ```
 
 ## Run tests
 
 ```sh
 npm run test
+```
+
+## Examples
+Check the examples/samples. Run start:dev 
+
+```sh
+npm run start:dev
 ```
 
 ## Author

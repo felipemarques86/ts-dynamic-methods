@@ -77,7 +77,7 @@ export function Recast(subject: any) {
  * @param expectedValue
  * @constructor
  */
-export function SuccessorOf(subject: Function, condition: Function, expectedValue: any) {
+export function ConditionalReplaceMethodsOn(subject: Function, condition: Function, expectedValue: any) {
     return function(successor: Function) {
         successorImpl(subject, successor, condition, expectedValue);
     };
@@ -115,7 +115,7 @@ export function Span(...subjects: Function[]) {
  * @param expectedValue
  * @constructor
  */
-export function SuccededBy(successor: Function, condition: Function, expectedValue: any) {
+export function ConditionalReplaceMethodsBy(successor: Function, condition: Function, expectedValue: any) {
     return function(subject: Function) {
         successorImpl(subject, successor, condition, expectedValue);
     };
@@ -140,7 +140,7 @@ export function Lock(lock: boolean) {
  * @param fn - method that will replace all methods inside the target class
  * @constructor
  */
-export function Shadow(fn: Function) {
+export function ReplaceMethodsBy(fn: Function) {
     return function(subject: Function) {
         shadowImpl(subject, fn);
     }
