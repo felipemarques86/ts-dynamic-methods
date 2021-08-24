@@ -1,6 +1,6 @@
 {
   "name": "ts-dynamic-methods",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A collection of annotations for development in typescript.",
   "main": "index.js",
   "homepage": "https://github.com/felipemarques86/ts-dynamic-methods",
