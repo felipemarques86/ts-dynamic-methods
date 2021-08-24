@@ -74,7 +74,7 @@ objectC1.method2();
 
 // ------------------------------------------------------
 
-console.log("---------- @SuccededBy example ---------");
+console.log("---------- @ConditionalReplaceMethodsBy example ---------");
 @ConditionalReplaceMethodsBy(C, D.prototype.method4, true)
 class D {
     method1(): void {
@@ -185,7 +185,7 @@ try {
 
 {
 
-    console.log("---------- Complex example ---------");
+    console.log("---------- Complex example 1 ---------");
 
     abstract class AnotherClassWithMethod2 {
         method2(): void {
@@ -243,4 +243,44 @@ try {
     /* This method will be replaced by an empty method because of the Recast of Parent */
     new ChildC().method2();
 
+}
+
+{
+    console.log("---------- Complex example 2 ---------");
+
+    abstract class LoginService {
+        login(userData: any) {
+            console.log('Login successful');
+        }
+    }
+
+    abstract class DatabaseService {
+        saveData(data: any) {
+            this.showMessage();
+        }
+
+        private showMessage() {
+            console.log('Data saved');
+        }
+    }
+
+    @Inject(LoginService, DatabaseService)
+    class Z {
+        private login(userData: any) {
+            throw "Not implemented";
+        }
+
+        private saveData(data: any) {
+            throw "Not implemented";
+        }
+
+        loginUser(userData: any) {
+            this.login(userData);
+            this.saveData(userData);
+        }
+    }
+
+
+    const z = new Z();
+    z.loginUser('aUser');
 }
