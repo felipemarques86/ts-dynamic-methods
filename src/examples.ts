@@ -249,24 +249,24 @@ try {
     console.log("---------- Complex example 2 ---------");
 
     abstract class LoginService {
-        login(userData: any) {
-            console.log('Login successful');
+        login(userData: any, id: number) {
+            console.log('Login successful: ' + userData + ' id: ' + id);
         }
     }
 
     abstract class DatabaseService {
         saveData(data: any) {
-            this.showMessage();
+            this.showMessage(data);
         }
 
-        private showMessage() {
-            console.log('Data saved');
+        private showMessage(data: any) {
+            console.log('Data saved: ' + data);
         }
     }
 
     @Inject(LoginService, DatabaseService)
     class Z {
-        private login(userData: any) {
+        private login(userData: any, id: number) {
             throw "Not implemented";
         }
 
@@ -274,13 +274,13 @@ try {
             throw "Not implemented";
         }
 
-        loginUser(userData: any) {
-            this.login(userData);
+        loginUser(userData: any, id: number) {
+            this.login(userData, id);
             this.saveData(userData);
         }
     }
 
 
     const z = new Z();
-    z.loginUser('aUser');
+    z.loginUser('aUser', 100);
 }

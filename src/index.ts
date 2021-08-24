@@ -9,9 +9,9 @@ function successorImpl(subject: Function, successor: Function, condition: Functi
                     const old = subject.prototype[propName] as Function;
                     subject.prototype[propName] = function () {
                         if (condition.call(this) === expectedValue) {
-                            return succFunc.call(this);
+                            return succFunc.apply(this, arguments);
                         } else {
-                            return old.call(this);
+                            return old.apply(this, arguments);
                         }
                     }
                 }
