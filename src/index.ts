@@ -18,6 +18,13 @@ function successorImpl(subject: Function, successor: Function, condition: Functi
             }
         });
 
+    const succPropertyNames = Object.getOwnPropertyNames(successor.prototype).filter( name => subjectPropertyNames.indexOf(name) < 0 );
+    succPropertyNames
+        .filter(propName => propName !== 'constructor')
+        .forEach(propName => {
+            subject.prototype[propName] = successor.prototype[propName];
+        });
+
 }
 
 function lockImpl(lock: boolean, subject: Function) {
