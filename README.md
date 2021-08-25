@@ -8,7 +8,7 @@
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/felipemarques86/ts-dynamic-methods/blob/master/LICENSE" target="_blank">
-    <img alt="License: AGPL" src="https://img.shields.io/github/license/felipemarques86/ts-dynamic-methods" />
+    <img alt="License: MIT" src="https://img.shields.io/github/license/felipemarques86/ts-dynamic-methods" />
   </a>
 </p>
 
