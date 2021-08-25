@@ -1,5 +1,13 @@
 
-import {Recast, ReplaceMethodsBy, ConditionalReplaceMethodsOn, ConditionalReplaceMethodsBy, Span, Inject, Lock} from "../src";
+import {
+    Recast,
+    ReplaceMethodsBy,
+    ConditionalReplaceMethodsOn,
+    ConditionalReplaceMethodsBy,
+    Span,
+    Inject,
+    Lock
+} from "../src";
 import assert from "assert";
 
 console.log("---------- @Recast example ---------");
@@ -278,6 +286,7 @@ try {
             this.login(userData, id);
             this.saveData(userData);
         }
+
     }
 
 
